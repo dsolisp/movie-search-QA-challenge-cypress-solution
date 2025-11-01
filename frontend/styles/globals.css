@@ -1,0 +1,23 @@
+/* Global styles - poorly organized */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Inline styles are used throughout - this file is mostly unused */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* No responsive design considerations */
+@media (max-width: 768px) {
+  /* Empty - no mobile optimization */
+}

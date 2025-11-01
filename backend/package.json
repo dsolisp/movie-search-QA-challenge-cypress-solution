@@ -1,0 +1,19 @@
+{
+  "name": "movie-search-backend",
+  "version": "1.0.0",
+  "description": "Movie search backend - needs refactoring",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
