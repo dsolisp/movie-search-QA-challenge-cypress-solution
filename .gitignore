@@ -1,0 +1,7 @@
+/backend/node_modules
+/frontend/.next
+/frontend/node_modules
+/cypress-e2e/cypress/reports
+/cypress-e2e/cypress/screenshots
+/cypress-e2e/node_modules
+/.github
