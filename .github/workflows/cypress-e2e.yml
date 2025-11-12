@@ -1,0 +1,41 @@
+name: Cypress E2E (API-only)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install backend deps
+        working-directory: backend
+        run: npm ci
+
+      - name: Start backend
+        working-directory: backend
+        run: npm start &
+
+      - name: Install cypress-e2e deps
+        working-directory: cypress-e2e
+        run: npm ci
+
+      - name: Run Cypress (headless)
+        working-directory: cypress-e2e
+        run: npm run cypress:run
+
+      - name: Upload test reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-reports
+          path: cypress-e2e/cypress/reports/

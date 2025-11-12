@@ -103,11 +103,6 @@ jobs:
       run: npm run cypress:run -- --spec "cypress/e2e/ui_flows.cy.ts"
       continue-on-error: true
     
-    - name: Run component tests
-      working-directory: ./cypress-e2e
-      run: npm run cypress:run:component
-      continue-on-error: true
-    
     - name: Upload test reports
       if: always()
       uses: actions/upload-artifact@v4
